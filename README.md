@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# 🐾 FetchDogReward - Find Your Perfect Dog Match! 🐾
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> "It’s not bragging if you can back it up."
 
-## Available Scripts
+FetchDogReward is a React-based web application where dog lovers can search for their perfect furry friend, favorite dogs, and generate a personalized dog match based on their selections. This project demonstrates user authentication, filtering, and paginated data from a shelter dog API. The application is responsive, feature-rich, and scalable for future improvements.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🏗️ Project Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project is structured in a **modular and scalable** way, ensuring ease of maintenance and extensibility. The architecture leverages **React functional components**, **TypeScript**, and **TailwindCSS** for the UI/UX, making the project easy to scale while maintaining strong type safety.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Key Libraries:
+- **React**: Core UI library
+- **TypeScript**: Static typing for safer and more maintainable code
+- **TailwindCSS**: Utility-first CSS framework for responsive and modern design
+- **Axios**: HTTP client for making API requests
+- **React Router**: For client-side routing between pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🌟 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔑 Authentication
+- User authentication (Login) via `POST /auth/login` API using **name** and **email**.
+- User session is stored and maintained using cookies (HttpOnly), automatically sent with every request.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🐕 Dog Search
+- **Searchable and Filterable** dog listings by breed, location (city/state), and age range.
+- **Pagination**: Users can navigate between pages, select a specific page, and view dog listings in chunks.
+- **Sort**: Dogs can be sorted by name, breed, or age in ascending or descending order.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ❤️ Favorite & Match
+- Users can **favorite** their preferred dogs from the search results.
+- Users can **generate a match** from their favorite dogs by submitting the list to the `/dogs/match` endpoint.
+- **Matched dog** is displayed on a **sticky left sidebar**, always visible while browsing.
+---
 
-### `npm run eject`
+## 🚀 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ensure you have the following installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Node.js** (>=14.x)
+- **npm** or **yarn**
+- **A Geocode Earth API key** (for validating locations)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. **Clone the repository**:
+   ```
+      git clone https://github.com/your-username/FetchDogReward.git
+      cd FetchDogReward
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install dependencies**:
+   ```
+      npm install
+      # or
+      yarn install
+   ```
+3. **Set up environment variables: Create a .env file in the root directory and add the following**:
+   ```
+      REACT_APP_API_BASE_URL=https://frontend-take-home-service.fetch.com
+   ```
+4. **Start the development server**:
+   ```
+      npm start
+      # or
+      yarn start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📖 Usage
+
+### Login
+- Open the app and enter your **name** and **email** to log in.
+- After logging in, you'll be redirected to the **dog search page**.
+![LoginScreen](./src/images/login.png)
+
+### Search & Filter
+- Use the **city, state**, **breed**, and **age range** filters to find dogs.
+- You can **sort** the results by **name**, **breed**, or **age**.
+- **Pagination** is available to browse multiple pages of results.
+![Usage](./src/images/app.png)
+
+### Favorite & Match
+- Click the "Favorite" button to add a dog to your favorites list.
+- The matched dog will appear in the **left sidebar**.
+
+### Logout
+- Logout will redirected to **login page**
+
+---
+
+
+## 💡 Future Improvements
+
+### 📍 GeoLocation Authentication
+- Implement **geolocation-based authentication** to provide more accurate search results based on the user's actual location. This feature would allow the app to filter dogs in nearby locations without relying solely on city/state inputs.
+
+### 🖥️ User Input Pagination
+- Enhance the **pagination system** by allowing users to directly input the page number and navigate more efficiently between large datasets of dog search results.
+
+### 🛠️ UI/UX Enhancements:
+- Improve the **dog card UI** for better mobile responsiveness.
+- Add animations and transitions for a more interactive user experience.
+
+### 🧪 Comprehensive Testing:
+- Expand test coverage for edge cases and UI components using **Jest** and **React Testing Library**.
+
+---
+
+## ✨ Addiontional Points
+
+
+FetchDogReward has all the features needed to showcase my skills as a developer, but with a few more tweaks like geolocation validation and enhanced pagination, it can be even better.
+
+---
